@@ -102,7 +102,7 @@ def convert_image_to_png(base_64_input):
     return get_converted_image_url(response)
 
 
-def handler(event):
+def handler(event, context):
     s3_event = event['Records'][0]['s3']
     bucket_name = s3_event['bucket']['name']
     key = s3_event['object']['key']
